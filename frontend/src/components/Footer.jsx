@@ -1,15 +1,15 @@
 import React from "react";
+
 import { motion } from "framer-motion";
 import Particles from "react-tsparticles";
-// import { loadFull } from "tsparticles";
+import { loadFull } from "tsparticles";
 import { useCallback } from "react";
+import { FaLinkedin, FaTwitter, FaGithub, FaEnvelope } from "react-icons/fa";
 
-const ServicesPage = () => {
-  // const particlesInit = useCallback(async (engine) => {
-  //   await loadFull(engine);
-  // }, []);
-  const particlesInit = () => {};
-
+const Footer = () => {
+  const particlesInit = useCallback(async (engine) => {
+    await loadFull(engine);
+  }, []);
 
   const services = [
     {
@@ -45,7 +45,7 @@ const ServicesPage = () => {
   ];
 
   return (
-    <div className="relative w-full min-h-screen bg-black text-white px-6 py-16 overflow-hidden">
+    <div className="relative w-full min-h-screen bg-black text-white px-6 py-16 overflow-hidden flex flex-col">
       {/* Particle Background */}
       <Particles
         id="tsparticles"
@@ -80,7 +80,7 @@ const ServicesPage = () => {
       />
 
       {/* About Section */}
-      {/* <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 mb-20 relative z-10">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 mb-20 relative z-10">
         <motion.div
           initial={{ opacity: 0, x: -60 }}
           animate={{ opacity: 1, x: 0 }}
@@ -118,10 +118,10 @@ const ServicesPage = () => {
             </span>
             .
           </p>
-        </motion.div> */}
+        </motion.div>
 
         {/* Right: Image */}
-        {/* <motion.div
+        <motion.div
           initial={{ opacity: 0, x: 60 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
@@ -133,10 +133,10 @@ const ServicesPage = () => {
             className="w-80 md:w-[420px] drop-shadow-lg"
           />
         </motion.div>
-      </div> */}
+      </div>
 
       {/* Services Section */}
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto relative z-10 mb-20">
         <motion.h2
           initial={{ opacity: 0, y: -40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -166,13 +166,61 @@ const ServicesPage = () => {
               <h3 className="text-xl font-semibold text-white mb-2">
                 {service.title}
               </h3>
-              <p className="text-gray-600 text-lg">{service.desc}</p>
+              <p className="text-gray-400 text-sm">{service.desc}</p>
             </motion.div>
           ))}
         </div>
       </div>
+
+      {/* Footer */}
+      <footer className="mt-auto bg-gray-950 py-8 text-center relative z-10">
+        <div className="max-w-6xl mx-auto px-4">
+          <h3 className="text-lg font-semibold text-white mb-2">Ignite3i</h3>
+          <p className="text-gray-400 text-sm mb-4">
+            Empowering businesses through technology & innovation.
+          </p>
+
+          {/* Social Links */}
+          <div className="flex justify-center gap-6 mb-4">
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noreferrer"
+              className="text-gray-400 hover:text-blue-400 transition text-2xl"
+            >
+              <FaLinkedin />
+            </a>
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              rel="noreferrer"
+              className="text-gray-400 hover:text-blue-400 transition text-2xl"
+            >
+              <FaTwitter />
+            </a>
+            <a
+              href="https://github.com"
+              target="_blank"
+              rel="noreferrer"
+              className="text-gray-400 hover:text-blue-400 transition text-2xl"
+            >
+              <FaGithub />
+            </a>
+            <a
+              href="mailto:contact@ignite3i.com"
+              className="text-gray-400 hover:text-blue-400 transition text-2xl"
+            >
+              <FaEnvelope />
+            </a>
+          </div>
+
+          <p className="text-gray-500 text-xs">
+            © {new Date().getFullYear()} Ignite3i. All rights reserved.
+          </p>
+        </div>
+      </footer>
     </div>
   );
 };
 
-export default ServicesPage;
+export default Footer;
