@@ -1,11 +1,10 @@
-import React from 'react'
+import React from "react";
 // import image1 from './images/cbi.jpg'
 // import image2 from'./images/ig.jpg'
 // import image3 from'./images/igg.jpg'
-import image4 from'./images/iggg.jpeg'
+import image4 from "./images/iggg.jpeg";
 
-
-    import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 // import { Button } from "@/components/ui/button"; // if you're using shadcn, else replace with <button>
 
 const HomePage = () => {
@@ -48,11 +47,8 @@ const HomePage = () => {
           />
         </motion.div>
       </section>
-
-      
     </div>
   );
-}
+};
 
-
-export default HomePage
+export default HomePage;
