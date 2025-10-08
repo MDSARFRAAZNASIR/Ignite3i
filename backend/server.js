@@ -12,9 +12,12 @@ dbConnect();
 // connectToMongoDB();
 
 // apis
-app.post("/", (req, res) => {
-    res.send("Api in progress");
-})
+// ✅ Health check
+app.get("/", (req, res) => res.send("API is running successfully ✅"));
+
+// app.post("/", (req, res) => {
+//     res.send("Api in progress");
+// })
  //api for job post
 app.post("/jobcreate", async (req, res)=>{
     let job=new Job(req.body);
@@ -34,10 +37,8 @@ app.get("/joblist", async (req, res)=>{
 
 
 })
-app.get("/test", (req, res) => {
-  res.json({ status: "Server is working fine" });
-});
 
+//  for local server
 // const PORT = process.env.PORT || 4500;
 // //  Run Listen
 
@@ -46,4 +47,5 @@ app.get("/test", (req, res) => {
 // })
 
 // do not use app.listen in vercel
+// for the vercel
 module.exports=app

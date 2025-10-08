@@ -12,34 +12,25 @@ const mongoose = require("mongoose")
 //     }
 // }
 // module.exports = dbConnect;
-// let isConnected=false;
-// async function connectToMongoDB(){
-//     try {
-//         await mongoose.connect(process.env.DATABASE_URL,{
-//               useNewUrlParser:true,
-//         useUnifiedTopology:false
 
-//         })
-//         isConnected=true;
-//         console.log("Connected to MongoDb");
+// for vercel 
 
-//     } catch (error) {
-//         console.error("Error Connecte tothe mongodb", error)
-        
-//     }
-// }
+
 let isConnected = false;
+
 async function dbConnect() {
   if (isConnected) return;
-  await mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true });
-  isConnected = true;
+
+  try {
+    await mongoose.connect(process.env.DATABASE_URL, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    isConnected = true;
+    console.log("✅ MongoDB Connected");
+  } catch (err) {
+    console.error("❌ MongoDB Connection Error:", err);
+  }
 }
 
-
-// add middleware
-// app.use((req, res, next)=>{
-//     if (!isConnected){
-//         connectToMongoDB();
-//     }
-//     next();
-// })
+module.exports = dbConnect;
