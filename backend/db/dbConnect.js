@@ -1,14 +1,43 @@
 const mongoose = require("mongoose")
-const dbConnect = async () => {
+// const dbConnect = async () => {
+//     try {
+//         const conn = await mongoose.connect(process.env.DATABASE_URL)
+//         console.log(`Database connect: ${conn.connection.host}`)
+
+//     } catch (error) {
+//         console.error(`Database connect error: ${error.message}`)
+//         process.exit(1);
+
+
+//     }
+// }
+// module.exports = dbConnect;
+let isConnected=false;
+async function connctToMongoDB(){
     try {
-        const conn = await mongoose.connect(process.env.DATABASE_URL)
-        console.log(`Database connect: ${conn.connection.host}`)
+        await mongoose.connect(process.env.DATABASE_URL,{
+              useNewUrlParser:true,
+        useUnifiedTopology:false
+
+        })
+        isConnected=true;
+        console.log("Connected to MongoDb");
+
+
+       
+      
+
 
     } catch (error) {
-        console.error(`Database connect error: ${error.message}`)
-        process.exit(1);
-
-
+        console.error("Error Connecte tothe mongodb", error)
+        
     }
 }
-module.exports = dbConnect;
+
+// add middleware
+app.use((req, res, next)=>{
+    if (!isConnected){
+        connctToMongoDB();
+    }
+    next();
+})

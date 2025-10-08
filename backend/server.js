@@ -32,9 +32,12 @@ app.get("/joblist", async (req, res)=>{
 
 
 })
-const PORT = process.env.PORT || 4500;
-//  Run Listen
+// const PORT = process.env.PORT || 4500;
+// //  Run Listen
 
-app.listen(PORT, () => {
-    console.log(`server run on : ${process.env.NODE_ENV} port on ${PORT} `)
-})
+// app.listen(PORT, () => {
+//     console.log(`server run on : ${process.env.NODE_ENV} port on ${PORT} `)
+// })
+
+// do not use app.listen in vercel
+module.exports=app
