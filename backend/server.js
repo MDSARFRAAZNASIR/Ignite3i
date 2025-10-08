@@ -8,8 +8,8 @@ app.use(express.json());
 dotenv.config();
 app.use(cors());
 // database
-// dbConnect();
-connectToMongoDB();
+dbConnect();
+// connectToMongoDB();
 
 // apis
 app.post("/", (req, res) => {
