@@ -32,6 +32,10 @@ app.get("/joblist", async (req, res)=>{
 
 
 })
+app.get("/test", (req, res) => {
+  res.json({ status: "Server is working fine" });
+});
+
 // const PORT = process.env.PORT || 4500;
 // //  Run Listen
 
