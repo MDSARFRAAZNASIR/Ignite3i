@@ -8,7 +8,9 @@ app.use(express.json());
 dotenv.config();
 app.use(cors());
 // database
-dbConnect();
+// dbConnect();
+connectToMongoDB();
+
 // apis
 app.post("/", (req, res) => {
     res.send("Api in progress");

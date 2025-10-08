@@ -13,7 +13,7 @@ const mongoose = require("mongoose")
 // }
 // module.exports = dbConnect;
 let isConnected=false;
-async function connctToMongoDB(){
+async function connectToMongoDB(){
     try {
         await mongoose.connect(process.env.DATABASE_URL,{
               useNewUrlParser:true,
@@ -22,12 +22,6 @@ async function connctToMongoDB(){
         })
         isConnected=true;
         console.log("Connected to MongoDb");
-
-
-       
-      
-        
-
 
     } catch (error) {
         console.error("Error Connecte tothe mongodb", error)
@@ -38,7 +32,7 @@ async function connctToMongoDB(){
 // add middleware
 app.use((req, res, next)=>{
     if (!isConnected){
-        connctToMongoDB();
+        connectToMongoDB();
     }
     next();
 })
