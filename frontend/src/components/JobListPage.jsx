@@ -6,7 +6,7 @@ export default function JobsListPage() {
   const [jobs, setJobs] = useState([]);
 
   useEffect(() => {
-    fetch("ignite3i-backend.vercel.app/joblist")
+    fetch("https://ignite3i-backend.vercel.app/joblist")
       .then((res) => res.json())
       .then((data) => setJobs(data))
       .catch((err) => console.error(err));
@@ -17,7 +17,6 @@ export default function JobsListPage() {
       <h1 className="text-4xl font-bold text-yellow-400 mb-10 text-center">
         Open Positions
       </h1>
-
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {jobs.map((job, index) => (
           <motion.div

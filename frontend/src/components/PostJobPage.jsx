@@ -1,11 +1,7 @@
-        // src/pages/PostJobPage.jsx
+// src/pages/PostJobPage.jsx
 import React, { useState } from "react";
 
 const PostJobPage = () => {
-
-
-
-
   const [formData, setFormData] = useState({
     job_title: "",
     company_name: "Ignite3i", // default
@@ -50,9 +46,10 @@ const PostJobPage = () => {
       ...formData,
       benefits: formData.benefits.split(",").map((b) => b.trim()),
       required_skills: formData.required_skills.split(",").map((s) => s.trim()),
-      preferred_skills: formData.preferred_skills.split(",").map((s) => s.trim()),
+      preferred_skills: formData.preferred_skills
+        .split(",")
+        .map((s) => s.trim()),
     };
-
     try {
       const res = await fetch("ignite3i-backend.vercel.app/jobcreate", {
         method: "POST",
@@ -77,7 +74,6 @@ const PostJobPage = () => {
         className="bg-gray-900 p-8 rounded-2xl shadow-lg w-full max-w-3xl space-y-4"
       >
         <h1 className="text-3xl font-bold text-yellow-400">Post a Job</h1>
-
         <input
           type="text"
           name="job_title"
@@ -191,7 +187,7 @@ const PostJobPage = () => {
           onChange={handleChange}
           className="w-full p-2 rounded bg-gray-800 text-white"
         />
-         <select
+        <select
           name="experience_level"
           value={formData.experience_level}
           onChange={handleChange}
@@ -203,7 +199,6 @@ const PostJobPage = () => {
           <option>Lead</option>
 
           <option>Executive</option>
-
         </select>
 
         <input
@@ -251,9 +246,6 @@ const PostJobPage = () => {
       </form>
     </div>
   );
-}
+};
 
-      
- 
-
-export default PostJobPage
+export default PostJobPage;
