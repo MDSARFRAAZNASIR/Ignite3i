@@ -6,7 +6,7 @@ export default function JobsListPage() {
   const [jobs, setJobs] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:4500/joblist")
+    fetch("https://ignite3i-backend.vercel.app/joblist")
       .then((res) => res.json())
       .then((data) => setJobs(data))
       .catch((err) => console.error(err));
