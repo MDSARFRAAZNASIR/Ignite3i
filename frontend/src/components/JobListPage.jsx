@@ -5,12 +5,22 @@ import { motion } from "framer-motion";
 export default function JobsListPage() {
   const [jobs, setJobs] = useState([]);
 
+  // useEffect(() => {
+  //   fetch("https://ignite3i-backend.vercel.app/joblist")
+  //     .then((res) => res.json())
+  //     .then((data) => setJobs(data))
+  //     .catch((err) => console.error(err));
+  // }, []);
   useEffect(() => {
-    fetch("https://ignite3i-backend.vercel.app/joblist")
-      .then((res) => res.json())
-      .then((data) => setJobs(data))
-      .catch((err) => console.error(err));
-  }, []);
+  fetch("https://ignite3i-backend.vercel.app/joblist")
+    .then(res => res.json())
+    .then(data => {
+      console.log("Job data:", data);
+      // setJobList(data); // if you’re using React state
+    })
+    .catch(err => console.error("Fetch error:", err));
+}, []);
+
 
   return (
     <div className="bg-black min-h-screen text-white px-6 py-16">
