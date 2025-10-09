@@ -4,9 +4,10 @@ const app = express();
 const dotenv = require("dotenv");
 const dbConnect = require("./db/dbConnect");
 const Job=require("./db/jobSchema")
+app.use(cors());
 app.use(express.json());
 dotenv.config();
-app.use(cors());
+
 // database
 dbConnect();
 // connectToMongoDB();
@@ -36,6 +37,10 @@ app.post("/jobcreate", async (req, res)=>{
    
 })
 //api for job view
+app.get("/joblist", (req, res) => {
+  res.json([{ title: "Backend test working ✅" }]);
+});
+
 app.get("/joblist", async (req, res)=>{
     let jobList= await Job.find();
     if (jobList.length>0){
