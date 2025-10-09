@@ -3,9 +3,9 @@ import React from 'react'
 const ServiceScrollingPage = () => {
   return (
     <div>
-      <section class="second-section bg-black" id="second-section ">
-        <div class="moving-text">
-          <div class="con">
+      <section className="second-section bg-black" id="second-section ">
+        <div className="moving-text">
+          <div className="con">
             <h1>TELECOM</h1>
             <div id="circle"></div>
             <h1>CLOUD</h1>
@@ -15,7 +15,7 @@ const ServiceScrollingPage = () => {
              <h1>OS</h1>
             <div id="circle"></div>
           </div>
-          <div class="con">
+          <div className="con">
             <h1>TELECOM</h1>
             <div id="circle"></div>
             <h1>CLOUD</h1>
@@ -25,7 +25,7 @@ const ServiceScrollingPage = () => {
               <h1>OS</h1>
             <div id="circle"></div>
           </div>
-          {/* <div class="con">
+          {/* <div className="con">
             <h1>TELECOM</h1>
             <div id="circle"></div>
             <h1>CLOUD</h1>

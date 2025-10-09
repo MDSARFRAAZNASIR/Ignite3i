@@ -27,7 +27,7 @@ function App() {
       <Methodologies/>
       <PostJobPage/>
       <JobsListPage/>
-      <Careers/>
+      {/* <Careers/> */}
       {/* <Footer/> */}
      
 {/* 
