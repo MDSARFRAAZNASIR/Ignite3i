@@ -11,6 +11,15 @@ app.use(cors());
 dbConnect();
 // connectToMongoDB();
 
+ 
+// adding for live
+ app.use(cors({
+  origin: [
+    "http://localhost:3000",                // for local testing
+    "https://ignite3i.vercel.app"  // your deployed frontend
+  ],
+}));
+
 // apis
 // ✅ Health check
 app.get("/", (req, res) => res.send("API is running successfully ✅"));
@@ -30,6 +39,7 @@ app.post("/jobcreate", async (req, res)=>{
 app.get("/joblist", async (req, res)=>{
     let jobList= await Job.find();
     if (jobList.length>0){
+        res.json(jobList);
         res.send(jobList);
     }else{
         res.send("No Job Found")
