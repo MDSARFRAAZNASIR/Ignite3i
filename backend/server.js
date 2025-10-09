@@ -43,17 +43,28 @@ app.get("/joblist", (req, res) => {
   res.json([{ title: "Backend test working ✅" }]);
 });
 
-app.get("/joblist", async (req, res)=>{
-    let jobList= await Job.find();
-    if (jobList.length>0){
-        res.json(jobList);
-        res.send(jobList);
-    }else{
-        res.send("No Job Found")
-    }
+// app.get("/joblist", async (req, res)=>{
+//     let jobList= await Job.find();
+//     if (jobList.length>0){
+//         res.json(jobList);
+//         res.send(jobList);
+//     }else{
+//         res.send("No Job Found")
+//     }
 
 
-})
+// })
+
+// add for fix
+app.get("/joblist", async (req, res) => {
+  try {
+    const jobs = await Job.find(); // or your DB model name
+    res.json(jobs);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 
 //  for local server
 // const PORT = process.env.PORT || 4500;
