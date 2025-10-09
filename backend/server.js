@@ -14,12 +14,14 @@ dbConnect();
 
  
 // adding for live
- app.use(cors({
+app.use(cors({
   origin: [
-    "http://localhost:3000",                // for local testing
-    "https://ignite3i.vercel.app"  // your deployed frontend
+    "http://localhost:3000", // local testing
+    "https://ignite3i-frontend.vercel.app", // your deployed domain
+    "https://ignite3i.vercel.app" // if frontend lives here instead
   ],
 }));
+
 
 // apis
 // ✅ Health check
