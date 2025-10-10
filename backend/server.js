@@ -20,8 +20,7 @@ app.use(cors({
     "https://ignite3i-frontend.vercel.app", // your deployed domain
     "https://ignite3i.vercel.app" // if frontend lives here instead
   ],
-   methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true
+ 
 }));
 
 
@@ -33,22 +32,14 @@ app.get("/", (req, res) => res.send("API is running successfully ✅"));
 //     res.send("Api in progress");
 // })
  //api for job post
-// app.post("/jobcreate", async (req, res)=>{
-//     let job=new Job(req.body);
-//     let result= await job.save();
-//     res.send(result)
-//     res.send("Succesfull log in")
+app.post("/jobcreate", async (req, res)=>{
+    let job=new Job(req.body);
+    let result= await job.save();
+    res.send(result)
+    res.send("Succesfull log in")
    
-// })
-app.post("/jobcreate", async (req, res) => {
-  try {
-    const job = new Job(req.body);
-    const result = await job.save();
-    res.json(result);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
+})
+
 //api for job view
 // app.get("/joblist", (req, res) => {
 //   res.json([{ title: "Backend test working ✅" }]);
