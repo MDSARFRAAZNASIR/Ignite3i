@@ -60,6 +60,7 @@ app.post("/jobcreate", async (req, res)=>{
 // add for fix
 app.get("/joblist", async (req, res) => {
   try {
+    await dbConnect(); // ensures connection
     const jobs = await Job.find(); // or your DB model name
     res.json(jobs);
   } catch (err) {
