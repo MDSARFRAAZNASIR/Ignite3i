@@ -36,7 +36,7 @@ app.post("/jobcreate", async (req, res)=>{
     let job=new Job(req.body);
     let result= await job.save();
     res.send(result)
-    res.send("Succesfull job create")
+    res.send("Succesfull job create ")
    
 })
 
@@ -45,28 +45,29 @@ app.post("/jobcreate", async (req, res)=>{
 //   res.json([{ title: "Backend test working ✅" }]);
 // });
 
-app.get("/joblist", async (req, res)=>{
-    let jobList= await Job.find();
-    if (jobList.length>0){
-        res.json(jobList);
-        res.send(jobList);
-    }else{
-        res.send("No Job Found")
-    }
+// app.get("/joblist", async (req, res)=>{
+//     let jobList= await Job.find();
+//     if (jobList.length>0){
+//         res.json(jobList);
+//         res.send(jobList);
+//     }else{
+//         res.send("No Job Found")
+//     }
 
 
-})
+// })
 
 // add for fix
-// app.get("/joblist", async (req, res) => {
-//   try {
-//     await dbConnect(); // ensures connection
-//     const jobs = await Job.find(); // or your DB model name
-//     res.json(jobs);
-//   } catch (err) {
-//     res.status(500).json({ error: err.message });
-//   }
-// });
+app.get("/joblist", async (req, res) => {
+  try {
+    await dbConnect(); // ensures connection
+    const jobs = await Job.find(); // or your DB model name
+    res.json(jobs);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 
 
 //  for local server
