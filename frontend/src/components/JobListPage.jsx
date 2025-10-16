@@ -11,15 +11,30 @@ export default function JobsListPage() {
   //     .then((data) => setJobs(data))
   //     .catch((err) => console.error(err));
   // }, []);
-  useEffect(() => {
-  fetch("https://ignite3i-backend.vercel.app/joblist")
-    .then(res => res.json())
-    .then(data => {
-      console.log("Job data:", data);
-      // setJobList(data); // if you’re using React state
-    })
-    .catch(err => console.error("Fetch error:", err));
-}, []);
+  // useEffect(() => {
+  // fetch("https://ignite3i-backend.vercel.app/joblist")
+  //   .then(res => res.json())
+  //   .then(data => {
+  //     console.log("Job data:", data);
+  //     setJobs(data); // if you’re using React state
+  //   })
+  //   .catch(err => console.error("Fetch error:", err));
+  // fetch("ignite3i-backend-md-sarfraaz-nasirs-projects.vercel.app/joblist")
+
+
+
+
+
+// }, []);
+ useEffect(() => {
+    fetch("https://ignite3i-backend.vercel.app/joblist")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("✅ Job data:", data);
+        setJobs(Array.isArray(data) ? data : []);
+      })
+      .catch((err) => console.error("Fetch error:", err));
+  }, []);
 
 
   return (

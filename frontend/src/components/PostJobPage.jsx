@@ -51,7 +51,7 @@ const PostJobPage = () => {
         .map((s) => s.trim()),
     };
     try {
-      const res = await fetch("ignite3i-backend.vercel.app/jobcreate", {
+      const res = await fetch("ignite3i-backend-md-sarfraaz-nasirs-projects.vercel.app/jobcreate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(jobData),
