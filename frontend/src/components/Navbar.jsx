@@ -43,11 +43,12 @@ const Navbar = () => {
             transition={{ duration: 0.6 }}
             className="text-2xl font-bold text-blue-600"
           >
-            <img
+            {/* <img
               src={logo}
               alt="Computer Illustration"
               className="w-20 md:w-[200px] drop-shadow-lg opacity-40"
-            />
+            /> */}
+            <h1>COMAPNY</h1>
           </motion.h1>
 
           {/* Desktop Menu */}

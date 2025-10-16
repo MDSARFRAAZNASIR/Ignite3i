@@ -17,7 +17,7 @@ const AboutPage = () => {
           className="flex-1"
         >
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-            About to <span className="text-blue-600">Ignite3i</span> 
+            About to <span className="text-blue-600">Comapany</span> 
           </h1>
           <p className="text-gray-600 text-lg leading-relaxed mb-6">
             We are a software service company floated on <span className="font-semibold text-white">October 2019</span>.

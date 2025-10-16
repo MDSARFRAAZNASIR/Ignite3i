@@ -20,7 +20,7 @@ const HomePage = () => {
           className="max-w-lg"
         >
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Welcome to <span className="text-blue-600">Ignite3i</span>
+            Welcome to <span className="text-blue-600">My Company</span>
           </h1>
           <p className="text-gray-600 text-lg mb-6">
             Ignite3i is a cutting-edge software company delivering scalable,
