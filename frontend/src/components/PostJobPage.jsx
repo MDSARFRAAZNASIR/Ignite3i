@@ -63,7 +63,6 @@ const PostJobPage = () => {
         alert("❌ Failed to post job.");
       }
     } catch (err) {
-      
       console.error(err);
     }
   };
