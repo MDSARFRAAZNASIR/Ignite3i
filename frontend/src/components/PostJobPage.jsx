@@ -63,11 +63,12 @@ const PostJobPage = () => {
         alert("❌ Failed to post job.");
       }
     } catch (err) {
+      
       console.error(err);
     }
   };
 
-  
+
 
   return (
     <div className="bg-black min-h-screen text-white flex justify-center items-center">
