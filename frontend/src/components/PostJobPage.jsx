@@ -66,9 +66,6 @@ const PostJobPage = () => {
       console.error(err);
     }
   };
-
-
-
   return (
     <div className="bg-black min-h-screen text-white flex justify-center items-center">
       <form
