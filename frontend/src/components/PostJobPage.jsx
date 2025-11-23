@@ -50,6 +50,7 @@ const PostJobPage = () => {
         .split(",")
         .map((s) => s.trim()),
     };
+    
     try {ignite3i-backend.vercel.app
       const res = await fetch("ignite3i-backend.vercel.app/jobcreate", {
         method: "POST",
