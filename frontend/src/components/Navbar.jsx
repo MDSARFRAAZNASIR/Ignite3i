@@ -48,7 +48,7 @@ const Navbar = () => {
               alt="Computer Illustration"
               className="w-20 md:w-[200px] drop-shadow-lg opacity-40"
             /> */}
-            <h1>COMAPNY</h1>
+            <h1>Ignite3i</h1>
           </motion.h1>
 
           {/* Desktop Menu */}
