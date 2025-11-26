@@ -10,7 +10,7 @@ import ServicesPage from './components/ServicesPage';
 import Footer from './components/Footer';
 import Methodologies from './components/Methodologies';
 import Careers from './components/Careers';
-import PostJobPage from './components/PostJobPage';
+// import PostJobPage from './components/PostJobPage';
 import JobsListPage from './components/JobListPage';
 
 
@@ -27,6 +27,7 @@ function App() {
       <Methodologies/>
       <PostJobPage/>
       <JobsListPage/>
+      {/* <JobsListPage/>*/}
       {/* <Careers/> */}
       {/* <Footer/> */}
      
