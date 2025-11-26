@@ -1,45 +1,30 @@
+import "./App.css";
+import AboutPage from "./components/AboutPage";
+import { BrowserRouter } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import HomePage from "./components/HomePage";
+import ServiceScrollingPage from "./components/addingpages/ServiceScrollingPage";
+import ScrollToTop from "./components/ScrollToTop";
+import ServicesPage from "./components/ServicesPage";
 
-import './App.css';
-import AboutPage from './components/AboutPage';
-import {Route, BrowserRouter, Routes} from 'react-router-dom'
-import Navbar from './components/Navbar';
-import HomePage from './components/HomePage'
-import ServiceScrollingPage from './components/addingpages/ServiceScrollingPage';
-import ScrollToTop from './components/ScrollToTop';
-import ServicesPage from './components/ServicesPage';
-import Footer from './components/Footer';
-import Methodologies from './components/Methodologies';
-import Careers from './components/Careers';
-// import PostJobPage from './components/PostJobPage';
-import JobsListPage from './components/JobListPage';
+import Methodologies from "./components/Methodologies";
 
+import JobsListPage from "./components/JobListPage";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-       <Navbar/>
-       <ScrollToTop/>
-      <HomePage/>
-      <ServiceScrollingPage/>
-      <AboutPage/>
-      <ServicesPage/>
-      <Methodologies/>
-      <PostJobPage/>
-      <JobsListPage/>
-      {/* <JobsListPage/>*/}
-      {/* <Careers/> */}
-      {/* <Footer/> */}
-     
-{/* 
-      <Routes>
-        <Route to='aboutpage' element={<AboutPage/>}></Route>
-        <Route to='homepage' element={<HomePage/>}></Route>
-        
-      </Routes> */}
+        <Navbar />
+        <ScrollToTop />
+        <HomePage />
+        <ServiceScrollingPage />
+        <AboutPage />
+        <ServicesPage />
+        <Methodologies />
+
+        <JobsListPage />
       </BrowserRouter>
-     
-      
     </div>
   );
 }
