@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import PostJobPage from './components/PostJobPage';
+import JobsListPage from './components/JobPostList';
 
 function App() {
   return (
@@ -9,6 +10,8 @@ function App() {
         Admin Panel
       </h1>
       <PostJobPage/>
+      <h1>Job List</h1>
+      <JobsListPage/>
     </div>
   );
 }
