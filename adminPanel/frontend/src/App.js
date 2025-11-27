@@ -5,7 +5,7 @@ import JobsListPage from './components/JobPostList';
 
 function App() {
   return (
-    <div className="App">
+    <div >
       <h1>
         Admin Panel
       </h1>
