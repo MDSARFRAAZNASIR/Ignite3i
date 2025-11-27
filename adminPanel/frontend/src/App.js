@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import PostJobPage from './components/PostJobPage';
 import JobsListPage from './components/JobPostList';
@@ -10,7 +10,7 @@ function App() {
         Admin Panel
       </h1>
       <PostJobPage/>
-      <h1>Job List</h1>
+      <h1>Jobs List</h1>
       <JobsListPage/>
     </div>
   );
