@@ -15,6 +15,7 @@ dbConnect();
  
 // adding for live
 app.use(cors({
+  
   origin: [
     "http://localhost:3000", // local testing
     // "https://ignite3i-frontend.vercel.app", // your deployed domain
